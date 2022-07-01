@@ -1,7 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\PageController; 
+use App\Http\Controllers\PageController;
+use App\Http\Controllers\HomeController; 
+use App\Http\Controllers\AboutController; 
+use App\Http\Controllers\ArticleController; 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,8 +19,8 @@ use App\Http\Controllers\PageController;
 
 // Practicum 2
 
-Route::get('/', [PageController::class, 'index']);
-Route::get('/about', [PageController::class, 'about']);
-Route::get('/articles', [PageController::class, 'articles($id)']);
+Route::get('/', [HomeController::class, 'index']);
+Route::get('/about', [AboutController::class, 'about']);
+Route::get('/articles', [ArticleController::class, 'articles($id)']);
 
 
