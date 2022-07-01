@@ -17,10 +17,14 @@ use App\Http\Controllers\ArticleController;
 |
 */
 
-// Practicum 2
+// Practicum 
 
-Route::get('/', [HomeController::class, 'index']);
-Route::get('/about', [AboutController::class, 'about']);
+Route::get('/', [HomeController::class, 'index'])->name('index');
+Route::get('/about', [AboutController::class, 'about'])->name('about');
+Route::get('/contact-us', [ContactController::class, 'contact'])->name('contact-us');
+Route::get('/my-account', [MyAccountController::class, 'myaccount'])->name('my-account');
+
+
 Route::get('/articles', [ArticleController::class, 'articles($id)']);
 
 
