@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\PageController; 
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,20 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Practicum 1
+// Practicum 2
 
-Route::get('/', function () {
-    echo "Hi! Welcome To Laravel";
-});
-
-Route::get('/about', function () {
-    echo "Name: Maryam Mohammed Ali Albaiti <br>";
-    echo "NIM: 2041720205 <br>";
-    echo "Class: TI-2I"; 
-});
-
-Route::get('/articles/{id}', function ($id) {
-    echo "This is Article Pages with ID:  ".$id;
-});
+Route::get('/', [PageController::class, 'index']);
+Route::get('/about', [PageController::class, 'about']);
+Route::get('/articles', [PageController::class, 'articles($id)']);
 
 
